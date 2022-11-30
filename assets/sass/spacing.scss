@@ -1,0 +1,74 @@
+@use "sass:math";
+
+@function rem($size) {
+  $remSize: math.div($size, 16px);
+  @return #{$remSize}rem;
+}
+
+$gap-4xl: rem(300px);
+$gap-3xl: rem(200px);
+$gap-2xl: rem(142px);
+$gap-xl: rem(94px);
+$gap-lg: rem(64px);
+$gap-md: rem(32px);
+$gap-sm: rem(16px);
+
+.u-space-b-sm {
+  margin-bottom: $gap-sm;
+}
+
+.u-space-b-md {
+  margin-bottom: $gap-md;
+}
+
+.u-space-b-lg {
+  margin-bottom: $gap-lg;
+}
+
+.u-space-b-xl {
+  margin-bottom: $gap-xl;
+}
+
+.u-space-b-2xl {
+  margin-bottom: $gap-2xl;
+}
+
+.u-space-b-3xl {
+  margin-bottom: $gap-3xl;
+}
+
+.u-space-b-4xl {
+  margin-bottom: $gap-4xl;
+}
+
+.u-space-t-sm {
+  margin-top: $gap-sm;
+}
+
+.u-space-t-md {
+  margin-top: $gap-md;
+}
+
+.u-space-t-lg {
+  margin-top: $gap-lg;
+}
+
+.u-space-t-xl {
+  margin-top: $gap-xl;
+}
+
+.u-space-t-2xl {
+  margin-top: $gap-2xl;
+}
+
+.u-space-t-3xl {
+  margin-top: $gap-3xl;
+}
+
+.u-space-t-4xl {
+  margin-top: $gap-4xl;
+}
+
+.u-match-height {
+  height: 100%;
+}

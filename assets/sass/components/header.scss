@@ -1,0 +1,30 @@
+.c-header {
+  background-color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2%;
+  padding-right: 2%;
+
+  .c-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+
+    &__list {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      gap: 25px;
+
+      &_item {
+        @include menu-item();
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

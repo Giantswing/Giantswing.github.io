@@ -1,0 +1,73 @@
+/* TYPOGRAPHY */
+@use "sass:math";
+
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+$font--primary: "Space Grotesk", sans-serif;
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4 {
+    & {
+      font-size: $min-font-size;
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@mixin menu-item() {
+  text-transform: uppercase;
+  font-family: $font--primary;
+  @include fluid-type($sm, $xl, 15px, 18px);
+}
+
+@mixin title-h1() {
+  font-family: $font--primary;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include fluid-type($sm, $xl, 48px, 52px);
+}
+
+@mixin title-h2() {
+  font-family: $font--primary;
+  font-weight: 500;
+  text-transform: uppercase;
+  @include fluid-type($sm, $xl, 36px, 40px);
+}
+
+@mixin body-text() {
+  font-family: $font--primary;
+  font-weight: 400;
+  line-height: 135%;
+  @include fluid-type($sm, $xl, 16px, 18px);
+}
+
+h1 {
+  @include title-h1();
+  margin-top: 0;
+}
+
+h2 {
+  @include title-h2();
+  margin: 0;
+}
+
+p {
+  @include body-text();
+}

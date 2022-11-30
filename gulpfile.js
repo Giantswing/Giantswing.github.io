@@ -20,10 +20,10 @@ function includeHTML() {
 
 // Sass Task
 function scssTask() {
-  return src("css/style.scss", { sourcemaps: true })
+  return src("assets/sass/main.scss", { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([cssnano()]))
-    .pipe(dest("css", { sourcemaps: "." }));
+    .pipe(dest("./", { sourcemaps: "." }));
 }
 
 /*
@@ -53,7 +53,13 @@ function browsersyncReload(cb) {
 // Watch Task
 function watchTask() {
   watch(
-    ["src/*", "src/_templates", "css/*.scss", "app/**/*.js"],
+    [
+      "src/*",
+      "src/_templates",
+      "assets/sass/*.scss",
+      "assets/sass/components/*.scss",
+      "app/**/*.js",
+    ],
     series(includeHTML, scssTask, browsersyncReload)
   );
 }

@@ -1,0 +1,23 @@
+.c-hero {
+  margin-top: $gap-md;
+  border: 1px solid black;
+  position: relative;
+
+  &__content {
+    padding: 2%;
+    padding-left: 5%;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 15px;
+      height: 70%;
+      background: url("assets/images/hero-decoration.svg") no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+}
