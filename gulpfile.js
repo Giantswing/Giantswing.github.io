@@ -4,6 +4,19 @@ const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
+const fileinclude = require("gulp-file-include"),
+  gulp = require("gulp");
+
+function includeHTML() {
+  return src(["src/*.html"])
+    .pipe(
+      fileinclude({
+        prefix: "@@",
+        basepath: "@root",
+      })
+    )
+    .pipe(dest("./"));
+}
 
 // Sass Task
 function scssTask() {
@@ -37,11 +50,13 @@ function browsersyncReload(cb) {
   cb();
 }
 
-// Default Gulp Task
-exports.default = series(scssTask, browsersyncServe, watchTask);
-
 // Watch Task
 function watchTask() {
-  watch("*.html", browsersyncReload);
-  watch(["css/*.scss", "app/**/*.js"], series(scssTask, browsersyncReload));
+  watch(
+    ["src/*", "src/_templates", "css/*.scss", "app/**/*.js"],
+    series(includeHTML, scssTask, browsersyncReload)
+  );
 }
+
+// Default Gulp Task
+exports.default = series(includeHTML, scssTask, browsersyncServe, watchTask);
