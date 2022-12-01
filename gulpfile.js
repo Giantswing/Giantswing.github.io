@@ -4,8 +4,7 @@ const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
-const fileinclude = require("gulp-file-include"),
-  gulp = require("gulp");
+const fileinclude = require("gulp-file-include");
 
 function includeHTML() {
   return src(["src/*.html"])
