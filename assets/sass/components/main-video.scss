@@ -58,9 +58,31 @@
   }
 
   @media (max-width: $md-max) {
-    height: 65vh;
+    height: 25vh;
+
+    &--ready {
+      height: 40vh;
+      transition: 1s;
+      background-color: black;
+    }
 
     #player {
+      transform: scale(1.7);
+      min-height: 100% !important;
+    }
+  }
+
+  @media (max-width: $xs-max) {
+    height: 15vh;
+
+    &--ready {
+      height: 40vh;
+      transition: 1s;
+      background-color: black;
+    }
+
+    #player {
+      transform: scale(1.7);
       min-height: 100% !important;
     }
   }
