@@ -5,6 +5,11 @@
   padding-left: 2%;
   padding-right: 2%;
 
+  @media (max-width: $xs-max) {
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
   .c-logo {
     display: flex;
     @media (max-width: $xs-max) {
