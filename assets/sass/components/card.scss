@@ -13,6 +13,10 @@
       height: 100%;
       object-fit: cover;
     }
+
+    @media (max-width: $sm-max) {
+      height: 180px;
+    }
   }
 
   &__content {
@@ -26,9 +30,19 @@
     padding: 5%;
     border: 1px solid black;
 
+    @media (max-width: $sm-max) {
+      padding: 7%;
+      padding-top: 5%;
+      text-align: center;
+    }
+
     &__title {
       padding-bottom: 15px;
       position: relative;
+
+      @media (maax-width: $sm-max) {
+        padding-bottom: 7px;
+      }
 
       &::after {
         content: "";
@@ -37,6 +51,12 @@
         top: 10px;
         width: 70%;
         height: 5px;
+
+        @media (max-width: $sm-max) {
+          width: 80%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       &--red {
@@ -70,6 +90,10 @@
       width: 100%;
       display: flex;
       justify-content: flex-end;
+
+      @media (max-width: $sm-max) {
+        padding-top: $gap-sm;
+      }
     }
   }
 }
