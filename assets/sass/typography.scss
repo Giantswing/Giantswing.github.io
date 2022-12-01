@@ -41,14 +41,14 @@ $font--primary: "Space Grotesk", sans-serif;
   font-family: $font--primary;
   font-weight: 700;
   text-transform: uppercase;
-  @include fluid-type($sm, $xl, 48px, 52px);
+  @include fluid-type($sm, $xl, 44px, 52px);
 }
 
 @mixin title-h2() {
   font-family: $font--primary;
   font-weight: 500;
   text-transform: uppercase;
-  @include fluid-type($sm, $xl, 36px, 40px);
+  @include fluid-type($sm, $xl, 33px, 40px);
 }
 
 @mixin body-text() {
