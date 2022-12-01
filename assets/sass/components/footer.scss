@@ -1,16 +1,24 @@
-.c-header {
+.c-footer {
   background-color: black;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 2%;
   padding-right: 2%;
+  color: white;
 
-  .c-logo {
+  .site-title {
+    height: 100%;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+
     @media (max-width: $xs-max) {
-      margin-bottom: 5px;
       justify-content: center;
-      flex-wrap: wrap;
+      p {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -21,7 +29,7 @@
     list-style: none;
 
     @media (max-width: $xs-max) {
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -29,14 +37,19 @@
       display: flex;
       list-style-type: none;
       padding: 0;
-      gap: 3.5vw;
+      gap: 25px;
 
       &_item {
-        @include menu-item();
-
+        margin: auto;
         a {
           color: white;
           text-decoration: none;
+          transition: opacity 0.1s ease-in-out;
+
+          &:hover {
+            transition: opacity 0.1s ease-in-out;
+            opacity: 0.6;
+          }
         }
       }
     }

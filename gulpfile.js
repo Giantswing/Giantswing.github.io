@@ -53,8 +53,8 @@ function browsersyncReload(cb) {
 function watchTask() {
   watch(
     [
-      "src/*",
-      "src/_templates",
+      "src/*.html",
+      "src/templates/*.html",
       "assets/sass/*.scss",
       "assets/sass/components/*.scss",
       "app/**/*.js",

@@ -1,7 +1,14 @@
 <html lang="en" dir="ltr">
-@@include('src/_templates/head.html') @@include('src/_templates/header.html')
+@@include('src/templates/head.html') @@include('src/templates/header.html')
 
 <body>
+  <div class="o-container">
+    <div class="o-grid">
+      <div class="o-grid__col u-12 u-12@sm">
+        SAMPLE TEXT
+      </div>
+    </div>
+  </div>
   <div class="o-container">
     <div class="c-hero u-space-b-md">
       <div class="c-hero__content">
@@ -31,7 +38,7 @@
 
   <div class="o-container u-space-b-xl">
     <div class="o-grid">
-      @@include('src/_templates/card-template.html', {
+      @@include('src/templates/card-template.html', {
       "card-title": "Coding/Games",
       "card-content": "Autem consequuntur quos distinctio
       corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
@@ -42,7 +49,7 @@
       "card-image" : "assets/images/cards/card-coding.jpg"
       })
 
-      @@include('src/_templates/card-template.html', {
+      @@include('src/templates/card-template.html', {
       "card-title": "3d",
       "card-content": "Autem consequuntur quos distinctio
       corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
@@ -52,7 +59,7 @@
       })
     </div>
     <div class="o-grid">
-      @@include('src/_templates/card-template.html', {
+      @@include('src/templates/card-template.html', {
       "card-title": "Design",
       "card-content": "Autem consequuntur quos distinctio
       corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
@@ -63,7 +70,7 @@
       "card-image" : "assets/images/cards/card-design.jpg"
       })
 
-      @@include('src/_templates/card-template.html', {
+      @@include('src/templates/card-template.html', {
       "card-title": "Music",
       "card-content": "Autem consequuntur quos distinctio
       corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
@@ -76,5 +83,7 @@
     </div>
   </div>
 </body>
+
+@@include('src/templates/footer.html')
 
 </html>

@@ -112,6 +112,102 @@ $grid-fractions: (
 
 @include hidden();
 
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: $o-container__gutter-single;
+  padding-left: $o-container__gutter-single;
+  max-width: $container-max;
+  width: 100%;
+
+  &--fluid {
+    max-width: 100%;
+  }
+
+  &--nogutter {
+    padding-right: 0;
+    padding-left: 0;
+
+    &-mobile {
+      padding-right: 0;
+      padding-left: 0;
+
+      @media (min-width: $md) {
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: $o-container__gutter-single;
+        padding-left: $o-container__gutter-single;
+        max-width: $container-max;
+        width: 100%;
+      }
+    }
+  }
+
+  &--addgutter-mobile {
+    @media (max-width: $xs-max) {
+      padding-right: $o-container__gutter-single !important;
+      padding-left: $o-container__gutter-single !important;
+    }
+  }
+
+  &--max-width-half {
+    padding-right: $o-container__gutter-single;
+    padding-left: $o-container__gutter-single;
+
+    @media (min-width: $md) {
+      max-width: ($container-max * 0.5);
+      width: 100%;
+    }
+
+    .o-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include container_sizes(2, 11);
+
+  &--right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &-modal {
+    padding: rem($modal-container__xs-p-Y) rem($modal-container__xs-p-X);
+
+    @media (min-width: $sm) {
+      padding: rem($modal-container__p-Y) rem($modal-container__p-X);
+    }
+  }
+}
+
+.o-columns {
+  p,
+  li {
+    break-inside: avoid;
+  }
+
+  &--2 {
+    @media (min-width: $sm) {
+      column-gap: rem($grid-gap);
+      column-count: 2;
+    }
+  }
+
+  &--4 {
+    @media (min-width: $sm) {
+      column-gap: rem($grid-gap);
+      column-count: 2;
+    }
+    @media (min-width: $md) {
+      column-count: 3;
+    }
+    @media (min-width: $xl) {
+      column-count: 4;
+    }
+  }
+}
+
 .o-grid {
   display: flex;
   flex: 0 1 auto;
@@ -209,102 +305,6 @@ $grid-fractions: (
   }
 }
 
-.o-columns {
-  p,
-  li {
-    break-inside: avoid;
-  }
-
-  &--2 {
-    @media (min-width: $sm) {
-      column-gap: rem($grid-gap);
-      column-count: 2;
-    }
-  }
-
-  &--4 {
-    @media (min-width: $sm) {
-      column-gap: rem($grid-gap);
-      column-count: 2;
-    }
-    @media (min-width: $md) {
-      column-count: 3;
-    }
-    @media (min-width: $xl) {
-      column-count: 4;
-    }
-  }
-}
-
-.o-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: $o-container__gutter-single;
-  padding-left: $o-container__gutter-single;
-  max-width: $container-max;
-  width: 100%;
-
-  &--fluid {
-    max-width: 100%;
-  }
-
-  &--nogutter {
-    padding-right: 0;
-    padding-left: 0;
-
-    &-mobile {
-      padding-right: 0;
-      padding-left: 0;
-
-      @media (min-width: $md) {
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: $o-container__gutter-single;
-        padding-left: $o-container__gutter-single;
-        max-width: $container-max;
-        width: 100%;
-      }
-    }
-  }
-
-  &--addgutter-mobile {
-    @media (max-width: $xs-max) {
-      padding-right: $o-container__gutter-single !important;
-      padding-left: $o-container__gutter-single !important;
-    }
-  }
-
-  &--max-width-half {
-    padding-right: $o-container__gutter-single;
-    padding-left: $o-container__gutter-single;
-
-    @media (min-width: $md) {
-      max-width: ($container-max * 0.5);
-      width: 100%;
-    }
-
-    .o-container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  @include container_sizes(2, 11);
-
-  &--right {
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  &-modal {
-    padding: rem($modal-container__xs-p-Y) rem($modal-container__xs-p-X);
-
-    @media (min-width: $sm) {
-      padding: rem($modal-container__p-Y) rem($modal-container__p-X);
-    }
-  }
-}
-
 .o-section {
   padding-top: rem($-o-section-padding);
   padding-bottom: rem($-o-section-padding);
@@ -341,7 +341,3 @@ $grid-fractions: (
 }
 
 @include offsets($grid-fractions);
-
-.u-full-width {
-  width: 100%;
-}
