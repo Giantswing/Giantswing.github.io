@@ -1,0 +1,67 @@
+.plyr iframe {
+  transition: 0.2s filter linear;
+}
+
+.plyr.plyr--paused iframe {
+  filter: blur(1.5rem);
+}
+
+.main-video {
+  height: 48vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  //have it grow in size on load
+  transition: 1s;
+
+  opacity: 0;
+
+  &--loaded {
+    opacity: 1;
+  }
+
+  &--ready {
+    height: 70vh;
+    transition: 1s;
+    background-color: black;
+
+    #player {
+      &::before,
+      &::after {
+        transition: 1s;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        width: 5%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      &::before {
+        left: 0;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, black 100%);
+      }
+
+      &::after {
+        right: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+      }
+    }
+  }
+
+  #player {
+    width: 100vw;
+    max-width: 1800px;
+  }
+
+  @media (max-width: $md-max) {
+    height: 65vh;
+
+    #player {
+      min-height: 100% !important;
+    }
+  }
+}

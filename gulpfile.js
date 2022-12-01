@@ -54,6 +54,7 @@ function watchTask() {
   watch(
     [
       "src/*.html",
+      "assets/js/*.js",
       "src/templates/*.html",
       "assets/sass/*.scss",
       "assets/sass/components/*.scss",

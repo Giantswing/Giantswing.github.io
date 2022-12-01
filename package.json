@@ -5,6 +5,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
     "patch-package": "^6.5.0",
+    "plyr": "^3.7.3",
     "sass": "^1.56.1"
   },
   "devDependencies": {
