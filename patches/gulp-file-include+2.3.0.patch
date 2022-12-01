@@ -1,0 +1,102 @@
+diff --git a/node_modules/gulp-file-include/Readme.md b/node_modules/gulp-file-include/Readme.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/gulp-file-include/lib/indent.js b/node_modules/gulp-file-include/lib/indent.js
+deleted file mode 100644
+index a6ea998..0000000
+--- a/node_modules/gulp-file-include/lib/indent.js
++++ /dev/null
+@@ -1,20 +0,0 @@
+-module.exports = function(src, index, dest) {
+-  var indent = ''
+-  var valid = false
+-
+-  while (src[index -= 1] == 0) { // eslint-disable-line
+-    if (src[index] === '\n') {
+-      valid = true
+-      break
+-    }
+-    indent = src[index] + indent
+-  }
+-
+-  if (valid) {
+-    dest = dest.split('\n').map(function(str, i) {
+-      return str == 0 || i === 0 ? str : (indent + str) // eslint-disable-line
+-    }).join('\n')
+-  }
+-
+-  return dest
+-}
+diff --git a/node_modules/gulp-file-include/lib/index.js b/node_modules/gulp-file-include/lib/index.js
+old mode 100644
+new mode 100755
+index 89168d8..ac0ca84
+--- a/node_modules/gulp-file-include/lib/index.js
++++ b/node_modules/gulp-file-include/lib/index.js
+@@ -4,7 +4,6 @@ const replaceOperator = require('./replace-operator')
+ const replaceFunction = require('./replace-function')
+ const replaceVariable = require('./replace-variable')
+ const concat = require('concat-stream')
+-const setIndent = require('./indent')
+ const through = require('through2')
+ const Vinyl = require('vinyl')
+ const PluginError = require('plugin-error')
+@@ -23,8 +22,7 @@ module.exports = function(opts) {
+     prefix: '@@',
+     suffix: '',
+     context: {},
+-    filters: false,
+-    indent: false
++    filters: false
+   }, opts)
+ 
+   if (opts.basepath !== '@file') {
+@@ -167,10 +165,6 @@ module.exports = function(opts) {
+ 
+         var includeContent = fs.readFileSync(includePath, 'utf-8')
+ 
+-        if (opts.indent) {
+-          includeContent = setIndent(inst.before, inst.before.length, includeContent)
+-        }
+-
+         // need to double each `$` to escape it in the `replace` function
+         // includeContent = includeContent.replace(/\$/gi, '$$$$');
+ 
+@@ -186,8 +180,7 @@ module.exports = function(opts) {
+           contents: Buffer.from(includeContent)
+         })
+ 
+-        recFile = include(recFile, includeContent, args[3] ? JSON5.parse(args[3]) : {}, inst.sourceFile != '' ? inst.sourceFile : currentFilename)
+-
++        recFile = include(recFile, includeContent, args[3] ? JSON5.parse(args[3].replace(/(\r|\n)/g, " ")) : {}, inst.sourceFile != "" ? inst.sourceFile : currentFilename);
+         return String(recFile.contents)
+       }
+     }
+@@ -213,7 +206,7 @@ module.exports = function(opts) {
+         } else {
+           // loop array in the function
+           try {
+-            arr = JSON5.parse(args[3])
++            arr = JSON5.parse(args[3].replace(/(\r|\n)/g, " "));
+           } catch (err) {
+             return console.error(err, args[3])
+           }
+@@ -228,9 +221,6 @@ module.exports = function(opts) {
+ 
+           var includeContent = fs.readFileSync(includePath, 'utf-8')
+ 
+-          if (opts.indent) {
+-            includeContent = setIndent(inst.before, inst.before.length, includeContent)
+-          }
+ 
+           // apply filters on include content
+           if (typeof opts.filters === 'object') {
+diff --git a/node_modules/gulp-file-include/lib/replace-function.js b/node_modules/gulp-file-include/lib/replace-function.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/gulp-file-include/lib/replace-operator.js b/node_modules/gulp-file-include/lib/replace-operator.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/gulp-file-include/lib/replace-variable.js b/node_modules/gulp-file-include/lib/replace-variable.js
+old mode 100644
+new mode 100755
