@@ -1,66 +1,80 @@
 <html lang="en" dir="ltr">
-  @@include('src/_templates/head.html') @@include('src/_templates/header.html')
+@@include('src/_templates/head.html') @@include('src/_templates/header.html')
 
-  <body>
-    <div class="o-container">
-      <div class="c-hero u-space-b-md">
-        <div class="c-hero__content">
-          <h1>Lorem ipsum.</h1>
-          <h2>Lorem ipsum dolor sit amet.</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-            debitis. Quas, et cum. Quis eligendi, qui accusamus culpa corrupti
-            tempora! Officiis fugiat quasi ipsa eos perspiciatis quos quia
-            veritatis culpa! Autem consequuntur quos distinctio corporis vel
-            quae fuga hic ad! Neque at iste, laudantium necessitatibus velit ea
-            quidem provident aut?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-            debitis. Quas, et cum. Quis eligendi, qui accusamus culpa corrupti
-            tempora! Officiis fugiat quasi ipsa eos perspiciatis quos quia
-            veritatis culpa! Autem consequuntur quos distinctio corporis vel
-            quae fuga hic ad! Neque at iste, laudantium necessitatibus velit ea
-            quidem provident aut?Neque at iste, laudantium necessitatibus velit
-            ea quidem provident aut?Neque at iste, laudantium necessitatibus
-            velit ea quidem provident aut?
-          </p>
-        </div>
+<body>
+  <div class="o-container">
+    <div class="c-hero u-space-b-md">
+      <div class="c-hero__content">
+        <h1>Lorem ipsum.</h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+          debitis. Quas, et cum. Quis eligendi, qui accusamus culpa corrupti
+          tempora! Officiis fugiat quasi ipsa eos perspiciatis quos quia
+          veritatis culpa! Autem consequuntur quos distinctio corporis vel
+          quae fuga hic ad! Neque at iste, laudantium necessitatibus velit ea
+          quidem provident aut?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+          debitis. Quas, et cum. Quis eligendi, qui accusamus culpa corrupti
+          tempora! Officiis fugiat quasi ipsa eos perspiciatis quos quia
+          veritatis culpa! Autem consequuntur quos distinctio corporis vel
+          quae fuga hic ad! Neque at iste, laudantium necessitatibus velit ea
+          quidem provident aut?Neque at iste, laudantium necessitatibus velit
+          ea quidem provident aut?Neque at iste, laudantium necessitatibus
+          velit ea quidem provident aut?
+        </p>
       </div>
     </div>
+  </div>
 
-    <div class="o-container u-space-b-xl">
-      <div class="o-grid">
-        @@include('src/_templates/card-template.html', { "card-title":
-        "CODING/GAMES", "card-content": "Autem consequuntur quos distinctio
-        corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
-        velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
-        velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
-        velit ea quidem provident aut?"})
+  <div class="o-container u-space-b-xl">
+    <div class="o-grid">
+      @@include('src/_templates/card-template.html', {
+      "card-title": "Coding/Games",
+      "card-content": "Autem consequuntur quos distinctio
+      corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?",
+      "card-color": "red",
+      "card-image" : "assets/images/cards/card-coding.jpg"
+      })
 
-        <div class="o-grid__col u-space-b-md u-12 u-6@sm">
-          <div class="c-card">
-            <div class="c-card__img">
-              <img src="assets/images/cards/card-3d.jpg" alt="" />
-            </div>
-
-            <div class="c-card__content">
-              <h2 class="c-card__content__title c-card__content__title--blue">
-                3d
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Eligendi rerum molestiae laboriosam adipisci pariatur qui illum,
-                ex aut soluta.
-              </p>
-
-              <div class="c-card__content__arrow">
-                <img src="assets/images/select-arrow.svg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @@include('src/_templates/card-template.html', {
+      "card-title": "3d",
+      "card-content": "Autem consequuntur quos distinctio
+      corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?",
+      "card-color": "blue",
+      "card-image" : "assets/images/cards/card-3d.jpg"
+      })
     </div>
-  </body>
+    <div class="o-grid">
+      @@include('src/_templates/card-template.html', {
+      "card-title": "Design",
+      "card-content": "Autem consequuntur quos distinctio
+      corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?",
+      "card-color": "green",
+      "card-image" : "assets/images/cards/card-design.jpg"
+      })
+
+      @@include('src/_templates/card-template.html', {
+      "card-title": "Music",
+      "card-content": "Autem consequuntur quos distinctio
+      corporis vel quae fuga hic ad! Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?Neque at iste, laudantium necessitatibus
+      velit ea quidem provident aut?",
+      "card-color": "red",
+      "card-image" : "assets/images/cards/card-music.jpg"
+      })
+    </div>
+  </div>
+</body>
+
 </html>
