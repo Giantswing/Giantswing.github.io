@@ -12,6 +12,7 @@ const player = new Plyr("#player", {
   loop: {
     active: true,
   },
+  muted: true,
 });
 
 player.on("ready", () => {
