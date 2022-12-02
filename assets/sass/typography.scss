@@ -58,6 +58,13 @@ $font--primary: "Space Grotesk", sans-serif;
   @include fluid-type($sm, $xl, 15.5px, 18px);
 }
 
+@mixin button-text() {
+  font-family: $font--primary;
+  font-weight: 400;
+  text-transform: uppercase;
+  @include fluid-type($sm, $xl, 16px, 18px);
+}
+
 h1 {
   @include title-h1();
   margin-top: 0;
