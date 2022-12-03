@@ -1,0 +1,19 @@
+@keyframes panning-bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.c-panning-bg {
+  height: 50px;
+  background: url(assets/images/pacman-bg.png) repeat-x;
+  //animation: panning 10s linear infinite;
+  animation: panning-bg 10s linear infinite;
+
+  @media (max-width: $sm-max) {
+    animation: panning-bg 4s linear infinite;
+  }
+}

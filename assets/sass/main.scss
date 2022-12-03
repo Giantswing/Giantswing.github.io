@@ -1,5 +1,5 @@
-@import "spacing.scss";
 @import "breakpoints.scss";
+@import "spacing.scss";
 @import "grid.scss";
 @import "typography.scss";
 @import "normalize.scss";
@@ -11,3 +11,11 @@
 @import "./components/card.scss";
 @import "./components/main-video.scss";
 @import "./components/button.scss";
+@import "./components/banner.scss";
+@import "./components/image.scss";
+@import "./components/info-card.scss";
+@import "./components/panning-bg.scss";
+
+a {
+  text-decoration: none;
+}

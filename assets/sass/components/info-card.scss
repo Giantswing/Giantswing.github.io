@@ -1,0 +1,41 @@
+.c-info-card {
+  background-color: $main-dark;
+  color: white;
+  padding: 1% 5%;
+  box-shadow: 10px 0 25px 0 rgba(25, 25, 25, 0.9);
+
+  &__list {
+    margin-bottom: $gap-md;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+
+    img {
+      height: fit-content;
+    }
+
+    @media (max-width: $sm-max) {
+      justify-content: center;
+      transform: scale(0.94);
+    }
+  }
+
+  @media (max-width: $sm-max) {
+    text-align: center;
+    padding: 3% 6%;
+  }
+}
+
+.c-info-card__image {
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: $md-max) {
+    height: 200px;
+  }
+}

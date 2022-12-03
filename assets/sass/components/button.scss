@@ -1,5 +1,5 @@
 .button {
-  background-color: black;
+  background-color: white;
   transition: 0.1s;
   width: fit-content;
   padding: 0.8rem 2.75rem;
@@ -9,15 +9,15 @@
 
   a {
     @include button-text();
-    color: white;
+    color: black;
     text-decoration: none;
   }
 
   &:hover {
-    background-color: white;
+    background-color: $main-dark;
 
     a {
-      color: black;
+      color: white;
     }
   }
 }
