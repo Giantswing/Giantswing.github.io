@@ -2,7 +2,7 @@
   background-color: $main-dark;
   color: white;
   padding: 1% 5%;
-  box-shadow: 10px 0 25px 0 rgba(25, 25, 25, 0.9);
+  box-shadow: 10px -10px 25px 0 rgba(25, 25, 25, 0.9);
 
   &__list {
     margin-bottom: $gap-md;
@@ -28,6 +28,7 @@
 }
 
 .c-info-card__image {
+  z-index: -5;
   img {
     object-fit: cover;
     object-position: center;

@@ -48,7 +48,7 @@
       </div>
 
       <div
-        class="o-grid o-grid--center o-grid--reverse o-grid--no-gutters u-space-b-lg"
+        class="o-grid o-grid--center o-grid--reverse o-grid--no-gutters u-space-b-lg u-hide-overflow"
       >
         <div class="o-grid__col u-12 u-3@lg c-info-card__image">
           <img src="assets/images/01-coding/coding-img2.jpg" alt="Coding" />
@@ -109,13 +109,45 @@
     </div>
 
     <div class="o-container u-space-b-lg">
+      <h2 class="u-text-center u-space-b-lg">Projects</h2>
+
       <div class="o-grid o-grid--center">
-        <div class="o-grid__col u-12 u-10@lg">
-          <h2>Projects</h2>
+        <div class="o-grid__col u-12 u-6@lg">
+          <!-- Slider main container -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/640/360" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/640/360" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/640/360" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="o-grid__col u-12 u-6@lg">
+          <h2>Game project name</h2>
+          <h3>Game genre</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error
+            dolore quas provident quam magni facere hic, autem porro quia ea
+            quisquam. Autem voluptatibus officia commodi.
+          </p>
         </div>
       </div>
     </div>
   </body>
+
+  <script src="assets/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/projects-swiper.js"></script>
 
   @@include('src/templates/footer.html')
 </html>

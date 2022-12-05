@@ -6,7 +6,8 @@
     "gulp-terser": "^2.1.0",
     "patch-package": "^6.5.0",
     "plyr": "^3.7.3",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10",

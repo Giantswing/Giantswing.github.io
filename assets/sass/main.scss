@@ -4,6 +4,7 @@
 @import "typography.scss";
 @import "normalize.scss";
 @import "colors.scss";
+@import "utilities.scss";
 
 @import "./components/header.scss";
 @import "./components/footer.scss";
@@ -15,6 +16,7 @@
 @import "./components/image.scss";
 @import "./components/info-card.scss";
 @import "./components/panning-bg.scss";
+@import "./components/project.scss";
 
 a {
   text-decoration: none;
