@@ -58,6 +58,13 @@ $font--primary: "Space Grotesk", sans-serif;
   @include fluid-type($sm, $xl, 29px, 33px);
 }
 
+@mixin title-h4() {
+  font-family: $font--primary;
+  font-weight: 300;
+  text-transform: uppercase;
+  @include fluid-type($sm, $xl, 24px, 28px);
+}
+
 @mixin body-text() {
   font-family: $font--primary;
   font-weight: 400;
@@ -84,6 +91,10 @@ h2 {
 
 h3 {
   @include title-h3();
+}
+
+h4 {
+  @include title-h4();
 }
 
 p {

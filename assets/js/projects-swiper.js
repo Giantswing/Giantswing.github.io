@@ -1,10 +1,11 @@
 const swiper = new Swiper(".swiper", {
   speed: 400,
-  spaceBetween: 100,
+  spaceBetween: 0,
   slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 2000,
+    //random delay
+    delay: 3000,
     disableOnInteraction: false,
   },
   pagination: {

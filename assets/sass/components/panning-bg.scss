@@ -15,5 +15,6 @@
 
   @media (max-width: $sm-max) {
     animation: panning-bg 4s linear infinite;
+    max-height: 50px;
   }
 }

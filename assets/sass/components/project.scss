@@ -1,2 +1,85 @@
 .c-project {
+  display: flex;
+
+  //switch to row-reverse on even child index
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .c-project__info {
+      @media (min-width: $lg) {
+        padding: 4% 7%;
+        padding-right: 25px;
+        border: 1px solid $main-dark;
+        border-right: 5px solid $main-dark;
+      }
+    }
+  }
+
+  &__info {
+    padding: 4% 7%;
+    padding-left: 25px;
+    border: 1px solid $main-dark;
+    border-left: 5px solid $main-dark;
+
+    @media (max-width: $md-max) {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      border: 1px solid $main-dark;
+
+      padding-top: 15px;
+      border-top: 5px solid $main-dark;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #666;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: $md-max) {
+      height: 300px;
+      margin-bottom: $gap-sm;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 5% !important;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+
+    @media (max-width: $md-max) {
+      bottom: 12% !important;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 20px !important;
+    border-radius: 0px !important;
+    background-color: white !important;
+  }
 }
