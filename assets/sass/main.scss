@@ -17,7 +17,13 @@
 @import "./components/info-card.scss";
 @import "./components/panning-bg.scss";
 @import "./components/project.scss";
+@import "./components/sketchfab.scss";
+@import "./components/gallery-swiper.scss";
 
 a {
   text-decoration: none;
+}
+
+.top {
+  padding-top: 100px !important;
 }
