@@ -1,17 +1,51 @@
+//panning animation
+@keyframes panning {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-6%);
+  }
+}
+
+.anim-panning {
+  img {
+    animation: panning 10s infinite;
+    scale: 1.2;
+  }
+}
+
 .c-gallery-swiper {
   position: relative;
-  margin-bottom: $gap-md;
+
+  &__logo {
+    z-index: 100;
+    width: 250px;
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+
+    @media (max-width: $sm-max) {
+      width: 200px;
+      bottom: 40px;
+      left: 10px;
+    }
+  }
 
   &--main {
+    margin-bottom: $gap-lg;
     .swiper-wrapper {
       .swiper-slide {
         img {
+          background-color: black;
           //make image full width
           width: 100%;
           height: 90vw;
           object-fit: cover;
           min-height: 300px;
           max-height: 540px;
+
+          //panning animation
         }
       }
     }
@@ -21,9 +55,14 @@
     width: 100%;
     .swiper-slide__img-container {
       overflow: hidden;
+      object-fit: cover;
+      object-position: center;
+      display: flex;
+      justify-content: center;
 
       img {
         object-fit: cover;
+        object-position: center;
         height: 30vw;
         max-height: 180px;
         transition: 0.3s;
@@ -31,14 +70,28 @@
         &:hover {
           cursor: pointer;
           transition: 0.3s;
-          transform: scale(1.1);
+          transform: scale(1.2);
+          transform-origin: center;
         }
       }
     }
 
-    .swiper-button {
-      color: black;
-      transform: scale(0.7);
+    .swiper-navigation {
+      .swiper-button {
+        //blend negative
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-size: 2rem;
+        padding: 30px !important;
+
+        @media (max-width: $sm-max) {
+          scale: 0.7;
+          padding: 10px !important;
+        }
+
+        transform: translateY(-50%);
+      }
     }
   }
 }

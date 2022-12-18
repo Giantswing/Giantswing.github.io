@@ -1,26 +1,16 @@
 const swiperThumbs = new Swiper(".js-gallery-swiper-thumbs", {
-  spaceBetween: 10,
-
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
   loop: true,
   rewind: false,
+  spaceBetween: 5,
+  slidesPerView: 2,
   freeMode: true,
-  centerInsufficientSlides: true,
-  /*
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  */
-
-  //have multiple rows
-  spaceBetween: 6,
-  slidesPerGroup: 1,
-  slidesPerView: 5,
-  slidesPerColumn: 2,
-  slidesPerColumnFill: "row",
-  /*
 
   breakpoints: {
     // when window width is >= 320px
@@ -35,11 +25,18 @@ const swiperThumbs = new Swiper(".js-gallery-swiper-thumbs", {
     },
     // when window width is >= 640px
     640: {
+      slidesPerView: 6,
+      spaceBetween: 6,
+    },
+    1024: {
       slidesPerView: 10,
       spaceBetween: 10,
     },
+    1920: {
+      slidesPerView: 15,
+      spaceBetween: 10,
+    },
   },
-  */
 });
 
 const swiperMain = new Swiper(".js-gallery-swiper", {
@@ -47,7 +44,7 @@ const swiperMain = new Swiper(".js-gallery-swiper", {
   loop: true,
   rewind: false,
   spaceBetween: 0,
-  speed: 500,
+  speed: 300,
   effect: "fade",
   thumbs: {
     swiper: swiperThumbs,
@@ -56,4 +53,18 @@ const swiperMain = new Swiper(".js-gallery-swiper", {
     delay: 5000,
     disableOnInteraction: false,
   },
+
+  //on slide change
+  on: {
+    slideChange: function () {
+      reset_animation();
+    },
+  },
 });
+
+function reset_animation() {
+  var el = document.getElementById("swiper-slider-main");
+  el.classList.remove("anim-panning");
+  void el.offsetWidth;
+  el.classList.add("anim-panning");
+}
