@@ -154,30 +154,11 @@
             />
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper" id="swiper-slider-main">
+              @@for (var i = 1; i <= 7; i++) {
               <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/361" />
+                <img src="/assets/images/02-3d/gallery/3d-gallery-`+i+`.jpg" />
               </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/362" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/363" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/364" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/365" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/366" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/367" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://loremflickr.com/640/368" />
-              </div>
+              }
             </div>
           </div>
         </div>
@@ -192,46 +173,15 @@
           >
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
+              @@for (var i = 1; i <= 7; i++) {
               <div class="swiper-slide">
                 <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/361" />
+                  <img
+                    src="/assets/images/02-3d/gallery/3d-gallery-`+i+`.jpg"
+                  />
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/362" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/363" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/364" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/365" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/366" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/367" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="swiper-slide__img-container">
-                  <img src="https://loremflickr.com/640/368" />
-                </div>
-              </div>
+              }
             </div>
 
             <!-- If we need navigation buttons -->

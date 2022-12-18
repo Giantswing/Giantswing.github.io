@@ -1,10 +1,11 @@
 //panning animation
 @keyframes panning {
   0% {
-    transform: translateX(0);
+    translate: 0;
   }
   100% {
-    transform: translateX(-6%);
+    //move to the left
+    translate: -6%;
   }
 }
 
@@ -91,6 +92,21 @@
         }
 
         transform: translateY(-50%);
+      }
+    }
+
+    .swiper-slide-visible {
+      img {
+        filter: brightness(0.6);
+        transition: 0.3s;
+      }
+    }
+
+    .swiper-slide-thumb-active {
+      img {
+        filter: brightness(1.5);
+        transform: scale(1.2);
+        transform-origin: center;
       }
     }
   }
